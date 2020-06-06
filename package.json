@@ -4,6 +4,9 @@
   "description": "Client library for Media Proxy.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "keywords": [
+    "Media Proxy"
+  ],
   "files": [
     "lib/**/*"
   ],
