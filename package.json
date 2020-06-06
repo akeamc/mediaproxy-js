@@ -1,0 +1,43 @@
+{
+  "name": "mediaproxy-js",
+  "version": "0.0.0",
+  "description": "Client library for Media Proxy.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "lint": "tslint -p tsconfig.json",
+    "test": "jest",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePicoNerd/mediaproxy-js.git"
+  },
+  "author": "Åke Amcoff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThePicoNerd/mediaproxy-js/issues"
+  },
+  "homepage": "https://github.com/ThePicoNerd/mediaproxy-js#readme",
+  "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.0",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "universal-base64": "^2.1.0"
+  }
+}
