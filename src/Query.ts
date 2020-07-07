@@ -7,6 +7,12 @@ export enum OutputFormat {
   Gif = "gif",
 }
 
+export enum ResizeStrategy {
+  Contain = "contain",
+  Crop = "crop",
+  Stretch = "stretch",
+}
+
 export class Query {
   /**
    * The output format of the media.
@@ -27,21 +33,29 @@ export class Query {
    */
   height?: number;
 
+  /**
+   * How to resize the media if the new dimensions have a different aspect ratio.
+   */
+  fit?: ResizeStrategy;
+
   constructor({
     format,
     source,
     width,
     height,
+    fit,
   }: {
     format: OutputFormat;
     source: string;
     width?: number;
     height?: number;
+    fit?: ResizeStrategy;
   }) {
     this.format = format;
     this.source = source;
     this.width = width;
     this.height = height;
+    this.fit = fit;
   }
 
   /**
@@ -53,6 +67,7 @@ export class Query {
       source: this.source,
       width: this.width,
       height: this.height,
+      fit: this.fit,
     });
   }
 
