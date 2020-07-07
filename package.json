@@ -1,6 +1,6 @@
 {
   "name": "mediaproxy-js",
-  "version": "0.2.0",
+  "version": "0.1.1",
   "description": "Client library for Media Proxy.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
